@@ -6,5 +6,6 @@ __pycache__/
 node_modules/
 package-lock.json
 chroma/
+knowledgeGraphPOC/src/server/public/app.bundle.js
 *.log
 npm-debug.log*

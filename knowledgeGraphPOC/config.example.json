@@ -24,6 +24,8 @@
     "provider": "chroma",
     "chroma": {
       "path": "http://localhost:8000",
+      "tenant": "default_tenant",
+      "database": "default_database",
       "nodeCollection": "kg_nodes",
       "relationCollection": "kg_relationships"
     }

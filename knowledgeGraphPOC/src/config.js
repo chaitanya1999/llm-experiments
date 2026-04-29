@@ -56,6 +56,8 @@ export function getConfig() {
 			provider: firstDefined(process.env.KG_VECTOR_PROVIDER, pocConfig.vector?.provider, "chroma"),
 			chroma: {
 				path: firstDefined(process.env.CHROMA_URL, pocConfig.vector?.chroma?.path, "http://localhost:8000"),
+				tenant: firstDefined(process.env.CHROMA_TENANT, pocConfig.vector?.chroma?.tenant, "default_tenant"),
+				database: firstDefined(process.env.CHROMA_DATABASE, pocConfig.vector?.chroma?.database, "default_database"),
 				nodeCollection: firstDefined(process.env.CHROMA_NODE_COLLECTION, pocConfig.vector?.chroma?.nodeCollection, "kg_nodes"),
 				relationCollection: firstDefined(process.env.CHROMA_RELATION_COLLECTION, pocConfig.vector?.chroma?.relationCollection, "kg_relationships"),
 			},
@@ -91,5 +93,7 @@ export function describeRuntime(config) {
 		vectorProvider: config.vector.provider,
 		neo4jDatabase: config.graph.neo4j.database,
 		chromaUrl: config.vector.chroma.path,
+		chromaTenant: config.vector.chroma.tenant,
+		chromaDatabase: config.vector.chroma.database,
 	};
 }
